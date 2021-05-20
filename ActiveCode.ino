@@ -63,12 +63,14 @@ void loop() {
   if( sensorVal1 > 870 ) {
       for(int i=0; i<5; i++) {    //pump Activate melody 1
       tone(piezo,notes[i],tempo);
+      
       delay(300);
     }
 
     motor1.setSpeed(150);
     motor1.run(FORWARD);
-    delay(2000);
+    delay(1500);
+    motor1.run(RELEASE);
      noTone(piezo);
   }
 
@@ -81,8 +83,9 @@ void loop() {
 
     motor2.setSpeed(150);
     motor2.run(FORWARD);
-    delay(2000);
-      noTone(piezo);
+    delay(1500);
+    motor2.run(RELEASE);
+    noTone(piezo);
  }
 
  
@@ -103,4 +106,5 @@ void loop() {
 
 
  }
+ 
  
